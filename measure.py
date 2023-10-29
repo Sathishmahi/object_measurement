@@ -86,7 +86,9 @@ def detector(video_path,TEXT_PROMPT,
       frame_first = False
       y_diff = y2-y1
       obj_hei = height_measurement(y_diff)
-      cv2.putText(frame,f"# {obj_hei:.1f} cm",(x1,y1-5),cv2.FONT_HERSHEY_COMPLEX,1.2,(0,0,255),3)
+      # cv2.putText(frame,f"# {obj_hei:.1f} cm",(x1,y1-5),cv2.FONT_HERSHEY_COMPLEX,1.2,(0,0,255),3)
+      cv2.putText(frame,f"#{ph} {obj_hei:.1f}cm",(x1,y1-5),cv2.FONT_HERSHEY_COMPLEX,.8,(0,0,255),3)
+
     # frame = annotate(image_source,boxes, logits, phrases)
     writer.write(frame)
     clear_output()
